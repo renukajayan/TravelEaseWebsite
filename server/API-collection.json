@@ -1,0 +1,664 @@
+{
+  "v": 11,
+  "name": "TravelEase API",
+  "folders": [
+    {
+      "v": 11,
+      "name": "Auth",
+      "folders": [],
+      "requests": [
+        {
+          "v": "17",
+          "name": "Register Admin",
+          "method": "POST",
+          "endpoint": "<<baseUrl>>/auth/register",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"name\": \"Admin\",\n  \"email\": \"admin@example.com\",\n  \"password\": \"123456\",\n  \"role\": \"admin\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "Login Admin",
+          "method": "POST",
+          "endpoint": "<<baseUrl>>/auth/login",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"email\": \"admin@example.com\",\n  \"password\": \"123456\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "Register User",
+          "method": "POST",
+          "endpoint": "<<baseUrl>>/auth/register",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"name\": \"Renu User\",\n  \"email\": \"renuuser@example.com\",\n  \"password\": \"123456\",\n  \"role\": \"user\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "Login User",
+          "method": "POST",
+          "endpoint": "<<baseUrl>>/auth/login",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"email\": \"renuuser@example.com\",\n  \"password\": \"123456\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        }
+      ],
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "headers": [],
+      "variables": [],
+      "description": null
+    },
+    {
+      "v": 11,
+      "name": "Users",
+      "folders": [],
+      "requests": [
+        {
+          "v": "17",
+          "name": "Get My Profile",
+          "method": "GET",
+          "endpoint": "<<baseUrl>>/users/me",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "bearer",
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5Y2QwZjY5NzdkMDRjM2I2YTYwN2RiMiIsImVtYWlsIjoiYWRtaW4xMkBleGFtcGxlLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzc1MDQ3OTQ4LCJleHAiOjE3NzUxMzQzNDh9.zZ5YRRBLRckZdWrSgzKHr3j2bNjQcrTAEKPDZHcE79o",
+            "authActive": true
+          },
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        }
+      ],
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "headers": [],
+      "variables": [],
+      "description": null
+    },
+    {
+      "v": 11,
+      "name": "Destinations",
+      "folders": [],
+      "requests": [
+        {
+          "v": "17",
+          "name": "Get All Destinations",
+          "method": "GET",
+          "endpoint": "<<baseUrl>>/destinations",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "Create Destination",
+          "method": "POST",
+          "endpoint": "<<baseUrl>>/destinations",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "bearer",
+            "token": "<<adminToken>>",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "  {\n  \"name\": \"Paris Getaway\",\n  \"country\": \"France\",\n  \"description\": \"Experience the charm of Paris with iconic landmarks, world-class cuisine, and romantic city views.\",\n  \"imageUrl\": \"  https://cdn.getyourguide.com/img/location/5ffeb39946966.jpeg/88.jpg\",\n  \"currency\": \"EUR\",\n  \"bestSeason\": \"Summar\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "Get Destination By ID",
+          "method": "GET",
+          "endpoint": "<<baseUrl>>/destinations/<<destinationId>>",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "Update Destination",
+          "method": "PUT",
+          "endpoint": "<<baseUrl>>/destinations/<<destinationId>>",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "bearer",
+            "token": "<<adminToken>>",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"name\": \"Paris Getaway\",\n  \"country\": \"France\",\n  \"description\": \"Updated - Experience the charm of Paris with iconic landmarks, world-class cuisine, and romantic city views.\",\n  \"imageUrl\": \"https://cdn.getyourguide.com/img/location/5ffeb39946966.jpeg/88.jpg\",\n  \"currency\": \"EUR\",\n  \"bestSeason\": \"Summar\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "Delete Destination",
+          "method": "DELETE",
+          "endpoint": "<<baseUrl>>/destinations/<<destinationId>>",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "bearer",
+            "token": "<<adminToken>>",
+            "authActive": true
+          },
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "Get Packages By Destination",
+          "method": "GET",
+          "endpoint": "<<baseUrl>>/destinations/<<destinationId>>/packages",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        }
+      ],
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "headers": [],
+      "variables": [],
+      "description": null
+    },
+    {
+      "v": 11,
+      "name": "Packages",
+      "folders": [],
+      "requests": [
+        {
+          "v": "17",
+          "name": "Get All Packages",
+          "method": "GET",
+          "endpoint": "<<baseUrl>>/packages",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "Create Package",
+          "method": "POST",
+          "endpoint": "<<baseUrl>>/packages",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "bearer",
+            "token": "<<adminToken>>",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"title\": \"7-Day Japan Cherry Blossom Tour\",\n  \"destinationId\": \"69ca0542368309ad7e40aa2c\",\n  \"durationDays\": 7,\n  \"price\": 2499,\n  \"description\": \"Explore Tokyo, Kyoto, and Osaka during cherry blossom season.\",\n  \"features\": [\"Flights included\", \"Hotel stay\", \"Breakfast\", \"Airport transfer\"],\n  \"placesIncluded\": [\"Tokyo\", \"Kyoto\", \"Osaka\"],\n  \"imageUrl\": \"https://www.tripsavvy.com/thmb/XcVqE4mg_jOFPINL2JVBVIfRAg0=/2500x1877/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-179989245-5c3670f9c9e77c000112af0b.jpg\",\n  \"availableSlots\": 12\n}"
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "Get Package By ID",
+          "method": "GET",
+          "endpoint": "<<baseUrl>>/packages/<<packageId>>",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "Update Package",
+          "method": "PUT",
+          "endpoint": "<<baseUrl>>/packages/<<packageId>>",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "bearer",
+            "token": "<<adminToken>>",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"title\": \"8-Day Japan Cherry Blossom Tour\",\n  \"destinationId\": \"69ca0542368309ad7e40aa2c\",\n  \"durationDays\": 8,\n  \"price\": 2799,\n  \"description\": \"Updated Japan spring tour package with extra sightseeing.\",\n  \"features\": [\"Flights included\", \"Hotel stay\", \"Breakfast\", \"Airport transfer\", \"City tour\"],\n  \"placesIncluded\": [\"Tokyo\", \"Kyoto\", \"Osaka\", \"Nara\"],\n  \"imageUrl\": \"https://www.tripsavvy.com/thmb/XcVqE4mg_jOFPINL2JVBVIfRAg0=/2500x1877/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-179989245-5c3670f9c9e77c000112af0b.jpg\",\n  \"availableSlots\": 10\n}"
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "Delete Package",
+          "method": "DELETE",
+          "endpoint": "<<baseUrl>>/packages/<<packageId>>",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "bearer",
+            "token": "<<adminToken>>",
+            "authActive": true
+          },
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "Filter by country",
+          "method": "GET",
+          "endpoint": "<<baseUrl>>/packages?country=Indonesia",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "Sort by price ascending",
+          "method": "GET",
+          "endpoint": "<<baseUrl>>/packages?sort=price_asc",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "Sort by price descending",
+          "method": "GET",
+          "endpoint": "<<baseUrl>>/packages?sort=price_desc",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "Sort by days ascending",
+          "method": "GET",
+          "endpoint": "<<baseUrl>>/packages?sort=days_asc",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "Sort by days descending",
+          "method": "GET",
+          "endpoint": "<<baseUrl>>/packages?sort=days_desc",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        }
+      ],
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "headers": [],
+      "variables": [],
+      "description": null
+    },
+    {
+      "v": 11,
+      "name": "Bookings",
+      "folders": [],
+      "requests": [
+        {
+          "v": "17",
+          "name": "Get My Bookings",
+          "method": "GET",
+          "endpoint": "<<baseUrl>>/bookings",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "bearer",
+            "token": "<<userToken>>",
+            "authActive": true
+          },
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "Create Booking",
+          "method": "POST",
+          "endpoint": "<<baseUrl>>/bookings",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "bearer",
+            "token": "<<userToken>>",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"packageId\": \"69ccf38677d04c3b6a607c2b\",\n  \"travellerName\": \"Renu User\",\n  \"travellerEmail\": \"renuuser@example.com\",\n  \"travellerPhone\": \"0400123456\",\n  \"numberOfTravellers\": 2,\n  \"travelDate\": \"2026-06-15\",\n  \"bookingForSelf\": true\n}"
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "Get Booking By ID",
+          "method": "GET",
+          "endpoint": "<<baseUrl>>/bookings/<<bookingId>>",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "bearer",
+            "token": "<<adminToken>>",
+            "authActive": true
+          },
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "Update Booking",
+          "method": "PUT",
+          "endpoint": "<<baseUrl>>/bookings/<<bookingId>>",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "bearer",
+            "token": "<<userToken>>",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"travellerName\": \"Renu User Updated\",\n  \"travellerEmail\": \"renuuser@example.com\",\n  \"travellerPhone\": \"0400999888\",\n  \"numberOfTravellers\": 3,\n  \"travelDate\": \"2026-06-20\",\n  \"bookingForSelf\": true,\n  \"status\": \"confirmed\",\n  \"packageId\":\"69cd181677d04c3b6a607df2\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "Cancel Booking",
+          "method": "PUT",
+          "endpoint": "<<baseUrl>>/bookings/<<bookingId>>",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "bearer",
+            "token": "<<userToken>>",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"travellerName\": \"Renu User Updated\",\n  \"travellerEmail\": \"renuuser@example.com\",\n  \"travellerPhone\": \"0400999888\",\n  \"numberOfTravellers\": 3,\n  \"travelDate\": \"2026-06-20\",\n  \"bookingForSelf\": true,\n  \"status\": \"cancelled\",\n  \"packageId\":\"69cd181677d04c3b6a607df2\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "Delete Booking",
+          "method": "DELETE",
+          "endpoint": "<<baseUrl>>/bookings/<<bookingId>>",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "bearer",
+            "token": "<<userToken>>",
+            "authActive": true
+          },
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        }
+      ],
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "headers": [],
+      "variables": [],
+      "description": null
+    }
+  ],
+  "requests": [],
+  "auth": {
+    "authType": "none",
+    "authActive": true
+  },
+  "headers": [],
+  "variables": [],
+  "description": ""
+}
